@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 12px;
+}
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply min-h-[100dvh] overflow-x-hidden bg-surface text-ink antialiased;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Markdown in assistant bubbles */
+.prose-assistant p {
+  @apply mb-3 last:mb-0;
+}
+.prose-assistant ul,
+.prose-assistant ol {
+  @apply my-2 pl-5;
+}
+.prose-assistant code {
+  @apply rounded bg-surface-muted px-1 py-0.5 text-sm font-mono text-ink;
+}
+.prose-assistant pre {
+  @apply my-3 overflow-x-auto rounded-lg bg-ink p-4 text-surface;
+}
+.prose-assistant pre code {
+  @apply bg-transparent p-0 text-surface;
+}

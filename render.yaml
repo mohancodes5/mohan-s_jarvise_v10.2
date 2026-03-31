@@ -1,0 +1,13 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+# Next.js Pages Router: pages/ at repo root (leave Root Directory empty).
+# Add OPENAI_API_KEY or ANTHROPIC_API_KEY in Environment (or MOCK_MODE=true).
+
+services:
+  - type: web
+    name: ai-assistant
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
